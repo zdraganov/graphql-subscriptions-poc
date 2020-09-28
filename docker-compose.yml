@@ -1,0 +1,31 @@
+---
+version: "3.0"
+services:
+  qos_worker1: &qos_worker
+    build:
+      dockerfile: Dockerfile
+      context: ./
+      args:
+      - NODE_ENV=development
+    command:
+    - npm
+    - run
+    - dev
+    restart: on-failure
+    volumes:
+    - .:/usr/src/app
+    - /usr/src/app/node_modules/
+    env_file:
+    - .env.dev
+    depends_on:
+    - redis
+    links:
+    - redis
+
+  qos_worker2:
+    <<: *qos_worker
+
+  redis:
+    image: redis:5
+    ports:
+    - '6379'

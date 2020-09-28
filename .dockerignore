@@ -1,0 +1,10 @@
+.git/
+chart/
+.vscode/
+
+node_modules/
+
+Makefile
+.gitignore
+.dockerignore
+.editorconfig

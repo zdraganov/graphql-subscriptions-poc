@@ -1,0 +1,32 @@
+{
+  "name": "stardust-discovery-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "dev": "NODE_ENV=development nodemon ./src/server.js",
+    "test": "NODE_ENV=development node ./node_modules/babel-cli/bin/babel-node.js test/subscription.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.18.1",
+    "apollo-server-express": "^2.18.1",
+    "express": "^4.17.1",
+    "graphql": "^15.3.0",
+    "graphql-redis-subscriptions": "^2.3.1",
+    "ioredis": "^4.17.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "apollo-link": "^1.2.14",
+    "apollo-link-ws": "^1.0.20",
+    "babel-cli": "^6.26.0",
+    "graphql-server-express": "^1.4.1",
+    "graphql-tag": "^2.11.0",
+    "nodemon": "^2.0.4",
+    "subscriptions-transport-ws": "^0.9.18",
+    "ws": "^7.3.1"
+  }
+}
